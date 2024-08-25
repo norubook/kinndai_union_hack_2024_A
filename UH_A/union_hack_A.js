@@ -31,6 +31,15 @@ function character_move() {
         character.y = 400;
         character.move_y =0;
     }
+    if (character.y <0){
+        character.move_y = 1;
+    }
+    if(character.x <0){
+        character.move_x=1
+    }
+    if(character.x>700){
+        character.move_x=-1
+    }
 }
 // キャラクターを描画する関数
 function drawCharacter() {
@@ -56,6 +65,11 @@ document.addEventListener('keydown', function(event) {
         character.move_x -= 10; // 左に移動
     }
     if (event.key === 'ArrowUp') {
+        if(character.move_y>=0){
         character.move_y -= 10; // 上に移動
+        }
+        else {
+            character.move_y -= 10; // 落下中の二段ジャンプはバウンドっぽい工夫加えたい
+        }
     }
 });
