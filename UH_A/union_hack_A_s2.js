@@ -11,7 +11,7 @@ const character = {
 character.image.src = 'file/test.png'; // 画像ファイルのパス
 
 
-const canvas = document.getElementById('first_battle');
+const canvas = document.getElementById('second_battle');
 const ctx = canvas.getContext('2d');
 
 function character_move() {
@@ -32,16 +32,12 @@ function character_move() {
         character.move_y =0;
     }
     if (character.y <0){
-        character.y = 0;
         character.move_y = 1;
     }
-
     if(character.x <0){
-        character.x =0;
         character.move_x=1
     }
     if(character.x>700){
-        character.x =700;
         character.move_x=-1
     }
 }
