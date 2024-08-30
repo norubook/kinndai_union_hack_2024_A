@@ -13,12 +13,57 @@
                 display: block;
                 margin: auto;
             }
+            #s2rink{
+                display: none;
+            }
+            .input-form {
+            margin-top: 20px;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-right: 10px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
         </style>
     </head>
     <body>
         <canvas id="first_battle" width="750" height="500"></canvas>
 
         <script src="union_hack_A.js"></script>
+        <form id="nazo-form" style="display: inline-flex;">
+            <input type="text", name="answer" id="answer" placeholder="入力フォーム">
+            <input type="submit" value="答える">
+        </form>
+        <a href="main_page.html" id ='s2rink'>次のページへ進む</a>
+        <script>
+            var count=0;
+            document.getElementById('nazo-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+            // 入力フィールドの値を取得
+            const answer = document.getElementById('answer').value.trim();
+            const rink = document.getElementById('s2rink');
+            
+
+            if (answer == '' ) { // 正解のキーワード
+                count +=1;
+            }
+            if (count >3){
+                rink.style.display = "inline";
+            }
+        });
+        </script>
     </body>
 
 </html>

@@ -7,8 +7,18 @@ const character = {
     move_y: 0,
     image: new Image() // キャラクターの画像
 };
+const enemy = {
+    x: 500,            // x座標
+    y: 380,           // y座標
+    width: 200,        // キャラクターの幅
+    height: 123,       // キャラクターの高さ
+    move_x: 0,
+    move_y: 0,
+    image: new Image() // キャラクターの画像
+};
 
 character.image.src = 'file/test.png'; // 画像ファイルのパス
+enemy.image.src = 'file/penga-0175.png'; // 画像ファイルのパス
 
 
 const canvas = document.getElementById('first_battle');
@@ -44,11 +54,19 @@ function character_move() {
         character.x =700;
         character.move_x=-1
     }
+
+
+
+    enemy.x +=20;
+    if (enemy.x > 800){
+        enemy.x= -300
+    }
 }
 // キャラクターを描画する関数
 function drawCharacter() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // 画面をクリア
     ctx.drawImage(character.image, character.x, character.y, character.width, character.height); // キャラクターを描画
+    ctx.drawImage(enemy.image, enemy.x, enemy.y, enemy.width, enemy.height); // キャラクターを描画
 }
 
 // ゲームループで描画を繰り返す

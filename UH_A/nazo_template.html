@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謎解き</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .input-form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            border: 1px solid #000;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">謎解き テンプレート</div>
+        <p>以下の謎を解き、答えを入力せよ。</p>
+        <img src="rinnetensei_2.png" alt="">
+        <div class="input-form">
+            <form id="nazo-form" style="display: inline-flex;">
+                <input type="text", name="answer" id="answer" placeholder="答えを入力してください">
+                <input type="submit" value="答える">
+            </form>
+            <p>
+            <button onclick=location.href="main_page.html">元のページに戻る</button>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // フォームが送信されたときに実行されるイベントリスナー
+        document.getElementById('nazo-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+            // 入力フィールドの値を取得
+            const answer = document.getElementById('answer').value.trim();
+
+            // 入力に応じてページにリダイレクト
+            if (answer == '輪廻転生' || answer=='rinnetensei' || answer=='りんねてんせい') { // 正解のキーワード
+                window.location.href = 'correct.html';
+            }
+            else if (answer == '') { // 空のキーワード
+                ; // 何もしない
+            }
+            else { // その他のキーワード
+                window.location.href = 'incorrect.html';
+            }
+        });
+    </script>
+
+</body>
+</html>
