@@ -8,7 +8,7 @@ const character = {
     move_x: 0,
     move_y: 0,
     jump_count: 0, //ジャンプ回数の記録
-    spear_flag: true, //槍投げ解禁以前かどうか
+    spear_flag: false, //槍投げ解禁以前かどうか
     image: new Image() // キャラクターの画像
 };
 
@@ -163,6 +163,9 @@ document.addEventListener('keydown', function(event) {
           character.move_y -= 10; // 上に移動
           character.jump_count += 1;
         }
+    }
+    if(event.key === "t"){
+        character.spear_flag = true;
     }
     if (event.key === " " & character.spear_flag === true){
         if(character.x-enemy.x <= 0 & existFlag == false){
