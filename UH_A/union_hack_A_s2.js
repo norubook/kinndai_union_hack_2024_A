@@ -104,9 +104,11 @@ function drawCharacter() {
             ctx.font = "75px arial black";
             ctx.fillText("Game Over", 150, 250);
             count +=1;
-            if(count==1){
+            if(count==1||count==2){
             const rink = document.getElementById('s1rink');
+            const rink_2 = document.getElementById('hint');
             rink.style.display = "inline";
+            rink_2.style.display = "inline";
             }
         }
 
