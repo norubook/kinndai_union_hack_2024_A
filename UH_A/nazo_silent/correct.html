@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「答え」をこの場で披露せよ</title>
+</head>
+<body>
+    「答え」をこの場で披露せよ
+    <h1>不正解です</h1>
+    <button onclick=location.href="nazo_silent.html">元のページに戻る</button>
+
+    <script>
+        function truth() {
+            window.location.href="truth_correct.html"
+        }
+
+        window.onload = function(){
+            window.setTimeout(truth, 6000)
+        }
+    </script>
+</body>
+</html>
