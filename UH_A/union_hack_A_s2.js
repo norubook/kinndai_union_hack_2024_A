@@ -8,7 +8,8 @@ const character = {
     move_y: 0,
     jump_count: 0, //ジャンプ回数の記録
     spear_flag: true, //槍投げ解禁以前かどうか
-    image: new Image() // キャラクターの画像
+    image: new Image(), // キャラクターの画像
+    image_2: new Image()
 };
 
 const spear = {
@@ -28,7 +29,8 @@ const enemy = {
     image: new Image() // キャラクターの画像
 };
 
-character.image.src = 'file/chara.png'; // 画像ファイルのパス
+character.image.src = 'file/character_right.png'; // 画像ファイルのパス
+character.image_2.src = 'file/character_left.png'; // 画像ファイルのパス
 enemy.image.src = 'file/penga-0175.png'; // 画像ファイルのパス
 let count =0;
 
@@ -77,7 +79,12 @@ function character_move() {
 // キャラクターを描画する関数
 function drawCharacter() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // 画面をクリア
+    if (character.move_x>=0){
     ctx.drawImage(character.image, character.x, character.y, character.width, character.height); // キャラクターを描画
+    }
+    else{
+        ctx.drawImage(character.image_2, character.x, character.y, character.width, character.height); 
+    }
     ctx.drawImage(enemy.image, enemy.x, enemy.y, enemy.width, enemy.height); // キャラクターを描画
 
         //下二行、よくあるhpバーの全体表示
