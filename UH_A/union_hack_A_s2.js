@@ -28,7 +28,7 @@ const enemy = {
     image: new Image() // キャラクターの画像
 };
 
-character.image.src = 'file/test.png'; // 画像ファイルのパス
+character.image.src = 'file/chara.png'; // 画像ファイルのパス
 enemy.image.src = 'file/penga-0175.png'; // 画像ファイルのパス
 let count =0;
 

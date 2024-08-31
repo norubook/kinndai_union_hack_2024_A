@@ -27,7 +27,7 @@ const enemy = {
   image: new Image(), //もし敵も画像使うのであれば利用。不要なら消しても問題なし
 };
 
-character.image.src = 'file/test.png'; // 画像ファイルのパス
+character.image.src = 'file/chara.png'; // 画像ファイルのパス
 let count =0;
 
 const canvas = document.getElementById('first_battle');
